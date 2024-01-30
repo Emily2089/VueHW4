@@ -1,0 +1,20 @@
+製作分頁：
+1. 改變 getData 的 API 路徑，換成有分頁的，並將 pagination 的資料存在 data 的 pages 裡
+2. 到 products.html 新增一個 pagination （程式碼可在 bootstrap 的 pagination 元件中看到），然後將 pages 的一些資料渲染上去，並加上 disabled 和 active 的屬性。
+3. 調整 getData 的 API 路徑，夾帶要求字串，?page=xxx，這個 xxx 的部分就可以透過參數帶進去，因此在 getData(xxx)，並且可以設預設值為1，這樣在尚未帶入參數時，它會自動跳到第一頁
+4. 回到 products.html 在 <a> 加上 @click="xxx" 來觸發 getData() 。
+
+將分頁做成元件：
+1. 建立元件環境 - 測試
+  1-1. 新增 pageComponent.js，在該 js 檔輸入 export default { template: `` }，先到這邊就好
+  2-1. 到 products.js 載入 pageComponent.js 並使用區域註冊的方式註冊該元件。
+  3-1. 回到 products.html 寫入元件標籤來將元件帶入
+
+2. 使用 props 傳輸資料
+  2-1. 將前面寫好的分頁的 html 全剪下貼到 pageComponent.js 中的 template。
+  2-2. 使用 props 將 products.js 的資料傳進來，分頁元件只會用到 pages 和 getData 而已，所以傳這兩個就好。
+  2-3. 
+  *** 注意！html 中的標籤、屬性名稱都不可以用駝峰式命名！屬性值 ok 喔 ~
+
+將 productModal 的內容做成元件：
+1. 建立元件環境
