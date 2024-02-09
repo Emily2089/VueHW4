@@ -37,7 +37,7 @@ export default {
             <h3>多圖新增</h3>
             <!-- note： Array.isArray() 可用來確認傳入的內容是否為一個陣列-->
             <div v-if="Array.isArray(tempProduct.demoImg)" class="mb-3">
-              <div v-for="(image, key) in tempProduct.demoImg" :key="key" class="mb-3">
+              <div v-for="(image, key) in tempProduct.demoImg" :key="key + 1912" class="mb-3">
                 <div class="mb-3">
                   <label :for="'demoImg'+key" class="form-label">圖片網址</label>
                   <input type="text" :id="'demoImg'+key" class="form-control" placeholder="請輸入圖片連結" v-model="tempProduct.demoImg[key]">
@@ -101,7 +101,7 @@ export default {
             <div class="mb-3">
               <h5>遊戲特色</h5>
               <div v-if="Array.isArray(tempProduct.features)" class="mb-3">
-                <div v-for="(feature, key) in tempProduct.features" :key="key" class="mb-3">
+                <div v-for="(feature, key) in tempProduct.features" :key="key + 2841" class="mb-3">
                   <label :for="'feature'+key" class="form-label">特色 {{ key+1 }}</label>
                   <textarea :id="'feature'+key" type="text" class="form-control"
                     placeholder="請輸入說明內容" v-model="tempProduct.features[key]">
