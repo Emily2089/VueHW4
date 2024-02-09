@@ -40,7 +40,6 @@ createApp({
         .then((res) => {
           this.products = res.data.products;
           this.pages = res.data.pagination;
-          console.log(res);
         })
         .catch((err) => {
           alert(err.response.data.message);
